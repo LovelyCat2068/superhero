@@ -28,3 +28,61 @@ function new_image(get_image){
         canvas.add(block_object);
     });
 }
+
+window.addEventListener("keydown", keyisdown);
+function keyisdown(e){
+    var keypressed = e.keyCode;
+    console.log("keydown");
+    if(e.shiftKey == true && keypressed == '71'){
+        console.log("shift+g = greater value")
+        block_width = block_width + 10;
+        block_height = block_height + 10;
+        document.getElementById("current_width").innerHTML = block_width;
+        document.getElementById("current_height").innerHTML = block_height;
+    }
+
+    if(e.shiftKey == true && keypressed == '83'){
+        console.log("shift+s = smaller value")
+        block_width = block_width - 10;
+        block_height = block_height - 10;
+        document.getElementById("current_width").innerHTML = block_width;
+        document.getElementById("current_height").innerHTML = block_height;
+    }
+
+    if(keypressed == '70'){
+        new_image('harry_potter_face.jpg');
+        console.log("face");
+    }
+    if(keypressed == '66'){
+        new_image('albus_dumbledore_body.jpg');
+        console.log("body");
+    }
+    if(keypressed == '76'){
+        new_image('ron_weasley_legs.jpg');
+        console.log("legs");
+    }
+    if(keypressed == '82' && keypressed == '72'){
+        new_image('hermione_granger_right_hand.jpg');
+        console.log("right hand");
+    }
+    if(keypressed == '76' && keypressed == '72'){
+        new_image('hermione_granger_left_hand.jpg');
+        console.log("left hand");
+    }
+    if(keypressed == '38'){
+        up();
+        console.log("up");
+    }
+    if(keypressed == '40'){
+        down();
+        console.log("down");
+    }
+    if(keypressed == '37'){
+        left();
+        console.log("left");
+    }
+    if(keypressed == '39'){
+        right();
+        console.log("right");
+    }
+}
