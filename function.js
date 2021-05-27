@@ -61,11 +61,11 @@ function keyisdown(e){
         new_image('ron_weasley_legs.jpg');
         console.log("legs");
     }
-    if(keypressed == '82' && keypressed == '72'){
+    if(keypressed == '82'){
         new_image('hermione_granger_right_hand.jpg');
         console.log("right hand");
     }
-    if(keypressed == '76' && keypressed == '72'){
+    if(keypressed == '72'){
         new_image('hermione_granger_left_hand.jpg');
         console.log("left hand");
     }
@@ -84,5 +84,46 @@ function keyisdown(e){
     if(keypressed == '39'){
         right();
         console.log("right");
+    }
+}
+
+function up(){
+    if(player_y >= 0){
+        player_y = player_y - block_height;
+        console.log("block height = " +block_height);
+        console.log("When UP Arrow Key is pressed, X Position = "
+         +player_x+ "Y Position = " +player_y );
+        canvas.remove(player_object);
+        update_img();
+    }
+}
+
+function down(){
+    if(player_y <= 500){
+        player_y = player_y + block_height;
+        console.log("player x ="+player_x+", player y ="+player_y);
+        console.log("height of block image = "+block_height+", block width = "+block_width);
+        canvas.remove(player_object);
+        update_img();
+    }
+}
+
+function left(){
+    if(player_x > 0){
+        player_x = player_x - block_width;
+        console.log("player x ="+player_x+", player y ="+player_y);
+        console.log("height of block image = "+block_height+", block width = "+block_width);
+        canvas.remove(player_object);
+        update_img();
+    }
+}
+
+function right(){
+    if(player_x <= 800){
+        player_x = player_x + block_width;
+        console.log("player x ="+player_x+", player y ="+player_y);
+        console.log("height of block image = "+block_height+", block width = "+block_width);
+        canvas.remove(player_object);
+        update_img();
     }
 }
